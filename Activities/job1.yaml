@@ -1,0 +1,18 @@
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: job1
+spec:
+  template:
+    metadata:
+      name: abc
+    spec:
+      containers:
+        - name: jobcontainer
+          image: alpine
+          args:
+            - sleep
+            - 1d
+          ports:
+            - containerPort: 80

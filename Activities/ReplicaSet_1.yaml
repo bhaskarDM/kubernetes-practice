@@ -1,0 +1,23 @@
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: replicaset1
+spec:
+  selector:
+    matchLabels:
+      app: jenkins
+      version: latest
+  template:
+    metadata:
+      labels:
+        app: jenkins
+        version: latest
+    spec:
+      containers:
+        - image: jenkins/jenkins:latest
+          name: jenkinscontainer
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+    replicas: 2

@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: exercise
+spec:
+  containers:
+    - name: alpinecontainer
+      image: alpine
+      args:
+        - sleep
+        - 1d
+      ports:
+        - containerPort: 80
+          protocol: TCP

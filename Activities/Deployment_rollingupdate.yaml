@@ -1,0 +1,27 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Deployment_rollingupdate
+spec:
+  selector:
+    matchLabels: 
+      app: test
+  replicas: 4
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavailable: 2
+  template:
+    metadata:
+      name: delpoyment_pod
+      labels:
+        app: test
+    spec:
+      containers:
+        - name: container
+          image: bhaskar150/activity:1.0
+          ports:
+            - containerPort: 80
+              protocol: TCP

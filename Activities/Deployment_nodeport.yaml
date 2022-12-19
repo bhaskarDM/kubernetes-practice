@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: Service
+metadata: 
+  name: deployment_nodeport
+spec:
+  selector: 
+    app: test
+  ports:
+    -  port: 32700
+       targetPort: 80
+       protocol: TCP
+       nodePort: 33000
+  type: NodePort

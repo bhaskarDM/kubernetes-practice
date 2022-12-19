@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodeport
+spec:
+  selector:
+    app: jenkins
+    version: 1.651.2
+  ports:
+    - port: 32700
+      targetPort: 8080
+      protocol: TCP
+      nodePort: 33000
+  type: NodePort

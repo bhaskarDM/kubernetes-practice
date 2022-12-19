@@ -1,0 +1,12 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap-env
+data:
+  my-variable: value
+  my-config.txt: |
+    log_path = /var/log/testme
+    app_name = qtcommerce
+    sleep_duration = 1d
+    

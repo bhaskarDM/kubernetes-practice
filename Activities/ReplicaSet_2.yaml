@@ -15,7 +15,7 @@ spec:
         version: "1.651.2"
     spec:
       containers:
-        - name: rs2_container
+        - name: rscontainer
           image: jenkins:1.651.2
           ports:
             - containerPort: 8080
